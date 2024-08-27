@@ -1,1 +1,3 @@
-# django-docker
+# Django Docker
+
+Dockerized Django application boilerplate
