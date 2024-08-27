@@ -4,15 +4,11 @@ set -e
 
 if [ ! -d ".venv" ]; then
     python -m venv .venv
-    source .venv/bin/activate
-    python -m pip install --upgrade pip setuptools wheel
-    pip install ruff
-    pip install -r requirements.txt
-else
-    if [[ -z "$VIRTUAL_ENV" ]]; then
-        .venv/bin/activate
-    fi
 fi
+
+source .venv/bin/activate
+python -m pip install --upgrade pip setuptools wheel
+pip install -r requirements-dev.txt
 
 if [ ! -f ".env" ]; then
     cp example.env .env
